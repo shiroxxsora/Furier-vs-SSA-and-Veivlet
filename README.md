@@ -1,6 +1,8 @@
-# Furier and SSA
+# Furier vs SSA and Veivlet
 
 Лабораторные работы по анализу пульсовых сигналов (ECG, 100 Гц, uint16).
+
+**Репозиторий:** https://github.com/shiroxxsora/Furier-vs-SSA-and-Veivlet
 
 | Папка | Работа |
 |-------|--------|
@@ -10,6 +12,8 @@
 ## Установка
 
 ```bash
+git clone https://github.com/shiroxxsora/Furier-vs-SSA-and-Veivlet.git
+cd Furier-vs-SSA-and-Veivlet
 pip install -r requirements.txt
 ```
 
