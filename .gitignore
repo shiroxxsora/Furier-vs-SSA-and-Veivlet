@@ -316,6 +316,9 @@ paket-files/
 __pycache__/
 *.pyc
 
+# Результаты лабораторных (генерируются скриптами)
+veivlet/output/
+
 # Cake - Uncomment if you are using it
 # tools/**
 # !tools/packages.config

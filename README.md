@@ -1,0 +1,26 @@
+# Furier and SSA
+
+Лабораторные работы по анализу пульсовых сигналов (ECG, 100 Гц, uint16).
+
+| Папка | Работа |
+|-------|--------|
+| [furie vs ssa](furie%20vs%20ssa/) | №1 — Фурье и SSA |
+| [veivlet](veivlet/) | №2 — вейвлет-спектры (PyWavelets) |
+
+## Установка
+
+```bash
+pip install -r requirements.txt
+```
+
+## Запуск
+
+```bash
+cd "furie vs ssa"
+python main.py
+
+cd veivlet
+python main.py
+```
+
+Датасет: [ECG Signal](https://www.kaggle.com/datasets/ahmadsaeed1007/ecg-signal) (скачивается через `kagglehub`).
