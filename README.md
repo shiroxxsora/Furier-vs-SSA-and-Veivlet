@@ -27,4 +27,14 @@ cd veivlet
 python main.py
 ```
 
-Датасет: [ECG Signal](https://www.kaggle.com/datasets/ahmadsaeed1007/ecg-signal) (скачивается через `kagglehub`).
+Локальный архив датасета (например, `d:\Downloads\AD_Dudin.zip`):
+
+```bash
+cd "furie vs ssa"
+python main.py --dataset-zip "d:\Downloads\AD_Dudin.zip"
+
+cd ../veivlet
+python main.py --dataset-zip "d:\Downloads\AD_Dudin.zip"
+```
+
+Датасет по умолчанию: [ECG Signal](https://www.kaggle.com/datasets/ahmadsaeed1007/ecg-signal) (скачивается через `kagglehub`).

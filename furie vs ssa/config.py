@@ -7,6 +7,8 @@ KAGGLE_DATASET = "ahmadsaeed1007/ecg-signal"
 ECG_DAT_FILENAME = "ECG.dat"
 SSA_WINDOW_LENGTH = 300
 SSA_MAX_COMPONENTS = 30
+HR_MIN_BPM = 40
+HR_MAX_BPM = 220
 
 # Окно для крупных графиков временного ряда (с)
 PLOT_ZOOM_SECONDS = 1.0

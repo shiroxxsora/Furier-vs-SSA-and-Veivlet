@@ -316,8 +316,17 @@ paket-files/
 __pycache__/
 *.pyc
 
-# Результаты лабораторных (генерируются скриптами)
+# Датасеты (большие бинарные файлы)
+datasets/
+furie vs ssa/data/
+veivlet/data/
+
+# Сгенерированные результаты вейвлет-лабораторной (много PNG)
 veivlet/output/
+
+# Сгенерированные результаты ЛР1 (PNG и CSV — можно перегенерировать)
+furie vs ssa/output/*.png
+furie vs ssa/output/*.csv
 
 # Cake - Uncomment if you are using it
 # tools/**

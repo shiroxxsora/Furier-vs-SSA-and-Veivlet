@@ -17,6 +17,12 @@ python main.py
 python main.py --dat-path "C:\path\to\ECG.dat"
 ```
 
+Запуск из zip-архива датасета:
+
+```bash
+python main.py --dataset-zip "d:\Downloads\AD_Dudin.zip"
+```
+
 Другие вейвлеты (K на выбор):
 
 ```bash

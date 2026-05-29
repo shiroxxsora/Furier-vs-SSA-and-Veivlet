@@ -7,6 +7,26 @@ pip install -r ../requirements.txt
 python main.py
 ```
 
+Запуск из zip-архива датасета:
+
+```bash
+python main.py --dataset-zip "d:\Downloads\AD_Dudin.zip"
+```
+
+Сравнение с исходной ЧСС из XLS (колонки `Имя файла` и `Чсс`, файл ищется автоматически):
+
+```bash
+python main.py --dataset-zip "d:\Downloads\AD_Dudin.zip"
+```
+
+Быстрый режим (обычно заметно быстрее на SSA):
+
+```bash
+python main.py --dataset-zip "d:\Downloads\AD_Dudin.zip" --no-plots --ssa-decimate 4 --ssa-max-samples 2500 --ssa-window-length 120
+```
+
+По умолчанию пики ищутся в физиологическом диапазоне `40..220` уд/мин (можно изменить через `--min-bpm` и `--max-bpm`).
+
 Подробные графики для сигналов 0, 5, 9:
 
 ```bash
