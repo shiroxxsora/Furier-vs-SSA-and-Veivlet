@@ -52,7 +52,7 @@ def load_data(lab_dir: Path | None = None) -> Dataset:
     """Загружает сигналы из furie vs ssa/data/."""
     base = (lab_dir or Path.cwd()).resolve()
     repo = base.parent
-    for data_dir in (repo / "furie vs ssa" / DATA_DIR, base / DATA_DIR):
+    for data_dir in (repo / DATA_DIR, repo / "furie vs ssa" / DATA_DIR, base / DATA_DIR):
         if not data_dir.is_dir():
             continue
         try:

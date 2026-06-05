@@ -47,18 +47,23 @@ def sinusoid_residuals(p, t, y):
 
 
 def fit_sinusoid_freq(y: np.ndarray, fs: float, min_bpm: float, max_bpm: float) -> float:
-    """f(t) = A·sin(ωt+φ)+A₀ → частота (сетка + least_squares, без БПФ)."""
+    """f(t) = A·sin(ωt+φ)+A₀ → частота (сетка по амплитуде + least_squares, без БПФ).
+
+    Частота дискретизации при прореживании выбирается так, чтобы она была
+    не менее 8× максимальной искомой частоты (требование теоремы Котельникова).
+    """
     n = y.size
     t_all = np.arange(n) / fs
     w_min, w_max = 2 * np.pi * min_bpm / 60, 2 * np.pi * max_bpm / 60
 
-    step = max(1, n // 200)
+    # Минимум 8× oversampling максимальной возможной ЧСС
+    max_freq_hz = max_bpm / 60.0
+    step = max(1, int(fs / (max_freq_hz * 8)))
     t, yd = t_all[::step], y[::step]
 
     fits = [linear_fit_at_omega(t, yd, float(w)) for w in np.linspace(w_min, w_max, 200)]
-    best_mse = min(f[4] for f in fits)
-    good = [f for f in fits if f[4] <= best_mse * 1.02]
-    A, w0, phi, a0, _ = min(good, key=lambda f: f[1])
+    # Выбираем частоту с максимальной амплитудой — аналог argmax(|FFT|) в диапазоне bpm.
+    A, w0, phi, a0, _ = max(fits, key=lambda f: f[0])
     fallback = abs(w0) / (2 * np.pi)
     w_lo, w_hi = max(w_min, w0 * 0.85), min(w_max, w0 * 1.15)
 
